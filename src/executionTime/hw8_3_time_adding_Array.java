@@ -18,11 +18,21 @@ public class hw8_3_time_adding_Array {
         long timeSpentForAdding = System.currentTimeMillis() - startAdding;
         System.out.println("Execution time for adding: " + timeSpentForAdding + " milliseconds");
         System.out.println(usersList.size());
+
+//поиск
+        long startSearching = System.currentTimeMillis();
+        System.out.println("The program starts searching objects");
+
+        usersList.get(600000);
+
+        long timeSpentForSearching = System.currentTimeMillis() - startSearching;
+        System.out.println("Execution time for searching: " + timeSpentForSearching + " milliseconds");
+
 //удаляем
         System.out.println("The program starts removing objects from ArrayList");
-        long startRemoving = System.currentTimeMillis() - timeSpentForAdding;
-        for (int i = usersList.size()-1; i >= 0; i--) {
-            usersList.remove(i);
+        long startRemoving = System.currentTimeMillis();
+        for (int i = 0; i < 1000000; i++) {
+            usersList.remove(0);
         }
         long timeSpentFOrRemoving = System.currentTimeMillis() - startRemoving;
         System.out.println("Execution time for removing: " + timeSpentFOrRemoving);
